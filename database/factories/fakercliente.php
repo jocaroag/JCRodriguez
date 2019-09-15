@@ -12,6 +12,13 @@ $factory->define(App\Models\Cliente::class, function (Faker $faker) {
        'nombre'		   =>$faker->name,
        'apellido'	   =>$faker->name,
        'telefono'	   =>$faker->randomDigit,
+       
+       'atributos'	   =>[
+       	"tipodocumento" =>$faker->cityPrefix,
+        "identificacion"=>$faker->randomDigit,
+        "nombre"	    =>$faker->name,
+
+       ],
 
     ];
 });

@@ -20,6 +20,7 @@ class Clientes extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->integer('telefono');
+            $table->json('atributos');
             $table->timestamps();
         });
     }
