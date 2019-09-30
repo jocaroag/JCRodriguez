@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Devoluciones extends Migration
+class Hojasdevidas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class Devoluciones extends Migration
      */
     public function up()
     {
-        Schema::create('devoluciones', function (Blueprint $table) {
+        Schema::create('hojasdevidas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('observacion');
-            $table->integer ('detalle_id')->unsigned();
+            $table->string ('ocupacion');
+            $table->string ('experiencia_laboral');
+            $table->integer('cliente_id')->unsigned();
 
+             $table->foreign('cliente_id')->references('id')->on('clientes');
 
-            $table->foreign('detalle_id')->references('id')->on('detalles');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class Devoluciones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('devoluciones');
+        Schema::dropIfExists('hojasdevidas');
     }
 }

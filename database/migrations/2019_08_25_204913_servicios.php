@@ -16,9 +16,9 @@ class Servicios extends Migration
         Schema::create('servicios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->integer('cod_categoria')->unsigned();
+            $table->integer('categoria_id')->unsigned();
 
-             $table->foreign('cod_categoria')->references('id')->on('categorias');
+             $table->foreign('categoria_id')->references('id')->on('categorias');
 
 
             $table->timestamps();

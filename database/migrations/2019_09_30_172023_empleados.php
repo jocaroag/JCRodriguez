@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Detalles extends Migration
+class Empleados extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,13 @@ class Detalles extends Migration
      */
     public function up()
     {
-        Schema::create('detalles', function (Blueprint $table) {
+        Schema::create('empleados', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cantidad');
-            $table->double('precio');
-            $table->integer('factura_id')->unsigned();
+            $table->string('nombre');
+            $table->string('cargo');
             $table->integer('servicio_id')->unsigned();
 
-            $table->foreign('factura_id')->references('id')->on('facturas');
             $table->foreign('servicio_id')->references('id')->on('servicios');
-
-
-
             $table->timestamps();
         });
     }
@@ -36,6 +31,6 @@ class Detalles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalles');
+        Schema::dropIfExists('empleados');
     }
 }

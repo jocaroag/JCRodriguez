@@ -7,27 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     protected $table = 'clientes';
-    protected $fillable = ['tipodocumento','identificacion','nombre','apellido','telefono','atributos'];
-    protected $casts =['atributos' =>'array'];
-
-    public function factura (){
-    return $this->hasMany('App\Models\Factura','cod_cliente');
-
-    }
-
-    //accesorio
-   public function getFullNameAttribute(){
-    return "{$this->identificacion} {$this->nombre}";
-   }
-
-   protected $appends=[
-    'full_name',
-   ];
+    protected $fillable = ['tipodocumento','identificacion','nombre','apellido'];
 
 
-   //mutador 
-   public function setNameAttribute($value){
+   public function hojadevida(){
 
-    $this->attributes['nombre']=ucfirst($value);
+    return $this->hasOne('App\Models\Hojavida');
    }
 }

@@ -16,9 +16,9 @@ class Facturas extends Migration
         Schema::create('facturas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha');
-            $table->integer('cod_cliente')->unsigned();
+            $table->integer('cliente_id')->unsigned();
 
-            $table->foreign('cod_cliente')->references('id')->on('clientes');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
 
             $table->timestamps();
         });

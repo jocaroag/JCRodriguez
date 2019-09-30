@@ -19,11 +19,11 @@ class Clientes extends Migration
             $table->integer('identificacion');
             $table->string('nombre');
             $table->string('apellido');
-            $table->integer('telefono');
-            $table->json('atributos');
             $table->timestamps();
         });
     }
+
+    
 
     /**
      * Reverse the migrations.

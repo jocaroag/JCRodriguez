@@ -16,3 +16,15 @@ Route::get('/', function () {
 });
 
 Route::get('/cliente', 'clientecontroller@index');
+Route::post('/cliente', 'clientecontroller@store');
+
+Route::get('/categoria', 'Categoriacontroller@index');
+Route::post('/categoria', 'Categoriacontroller@store');
+
+Route::get('/servicio', 'Serviciocontroller@index');
+Route::post('/servicio', 'Serviciocontroller@store');
+
+
+Route::post('/factura', 'Facturacontroller@store');
+
+Route::get('/getempleado', 'Empleadocontroller@getempleado');

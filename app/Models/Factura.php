@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Factura extends Model
 {
     protected $table = 'facturas';
-    protected $fillable = ['fecha','cod_cliente'];
+    protected $fillable = ['fecha','cliente_id'];
 
-    public function cliente (){
-    	return $this->belongsTo('App\Models\Cliente','cod_cliente');
+    public function servicios(){
+    	return $this->belongsToMany('App\Models\Servicio');
     }
 }
