@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Factura;
+use App\Models\Cliente;
 
 class FacturaController extends Controller
 {
     public function store(){
 
-    	//metodo Attach
-    	//$factura = Factura::find(1);
-    	//$factura->servicios()->attach(6);
+    	$cliente = Cliente::find(1);
+    	$cliente->facturas()->createMany([
 
-    	//metodo Sync
+    		['fecha' => '2019/10/04'],
+
+    	]);
 
     	$factura = Factura::find(1);
-    	$factura->servicios()->sync(array(2,4,5));
+    	$factura->descripciones()->createMany([
+
+    		['caracteristica' => 'factura con detalle'],
+
+    	]);
     }
 }

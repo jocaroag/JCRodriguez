@@ -13,11 +13,7 @@ class ServicioController extends Controller
 	}
     public function store(){
     	$categoria = Categoria::find(1);
-    	$categoria->servicios()->createMany([
-
-    		['nombre' => 'agil'],
-    		['nombre' => 'permanente'],
-    		['nombre' => 'superaido'],
+    	$categoria->descripciones()->createMany([
     	]);
     }
 }

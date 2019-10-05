@@ -17,4 +17,8 @@ class Categoria extends Model
     public function empleados(){
     	return $this->hasManyThrough('App\Models\Empleado', 'App\Models\Servicio');
     }
+
+    public function descripciones(){
+   	return $this->morphMany('App\Models\Descripcion', 'descripcionable');
+   }
 }

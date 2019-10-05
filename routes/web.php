@@ -27,4 +27,7 @@ Route::post('/servicio', 'Serviciocontroller@store');
 
 Route::post('/factura', 'Facturacontroller@store');
 
-Route::get('/getempleado', 'Empleadocontroller@getempleado');
+//Route::get('/empleado', 'Empleadocontroller@getempleado');
+Route::post('/empleado', 'Empleadocontroller@store');
+
+Route::get('/descripcion', 'DescripcionController@getdescripcion');

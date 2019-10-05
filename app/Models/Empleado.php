@@ -14,4 +14,8 @@ class Empleado extends Model
 
     return $this->belongsTo('App\Models\Servicio');
    }
+
+   public function descripciones(){
+   	return $this->morphMany('App\Models\Descripcion', 'descripcionable');
+   }
 }

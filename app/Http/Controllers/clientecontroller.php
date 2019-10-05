@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Hojavida;
+use App\Models\Descripcion;
 use Illuminate\Http\Request;
 
 class clientecontroller extends Controller
@@ -11,6 +12,7 @@ class clientecontroller extends Controller
     public function index(){
         
        return csrf_token();
+       
     }
 
     public function store(Request $request){
@@ -22,11 +24,7 @@ class clientecontroller extends Controller
 
     	$cliente->save();
 
-    	$hojadevida = new Hojavida;
-    	$hojadevida ->ocupacion='vendedor';
-    	$hojadevida ->experiencia_laboral='no';
-
-    	$cliente->hojadevida() ->save($hojadevida);
+    	$cliente->descripciones()->create(['caracteristica' => 'bueno bonito barato']);
 
     }
 }
