@@ -12,8 +12,13 @@ class DescripcionController extends Controller
 {
     public function getdescripcion(){  
 
-    	//$descripcion = Descripcion::with('descripcionable')->get();
-    	//return $descripcion;
+    	//CONSULTA DE TODAS LAS DESCRPCIONES HECHAS 
+
+
+    	$descripcion = Descripcion::with('descripcionable')->get();
+    	return $descripcion;
+
+    	//CONSULTAR QUIEN HIZO LA DESCRIPCION 
 
     	$descripcion = Descripcion::find(1);
     	return $descripcion;

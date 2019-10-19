@@ -15,8 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cliente', 'clientecontroller@index');
-Route::post('/cliente', 'clientecontroller@store');
+
+Route::resource('cliente', 'clientecontroller');
+
+Route::resource('categoria', 'CategoriaController');
+
+Route::resource('factura', 'Facturacontroller');
+
+Route::resource('empleado', 'Empleadocontroller');
+
+
 
 Route::get('/categoria', 'Categoriacontroller@index');
 Route::post('/categoria', 'Categoriacontroller@store');
